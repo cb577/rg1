@@ -19,6 +19,7 @@
 2019-11-12
 
 **FOV isn't working**
+- fov is working now.  I had some crufty old mixed-up code that was blocking it.  blarg.  blarg blarg blarg.  👍👍👍👍👍👍
 
 **subtask: fix deprecration warnings**
 
