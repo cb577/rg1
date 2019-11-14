@@ -25,3 +25,27 @@
 
 - [X] uuuuuuuuuuuuuuuuuugh
 -
+
+2019-11-13
+
+**String interoplation or something**
+
+```python
+print({} + {}, "rooms", len(game_map.rooms))
+```
+
+2019-11-14
+
+- [ ] Get that room assignment on the go
+- [X] Fix those deprecation warnings
+  - [X] uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuugh
+  - [X] uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuugh
+  - [X] uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuugh
+  - [X] uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuugh
+  - [X] uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuugh
+  - [X] uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuugh
+  - [X] uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuugh
+  - [X] Well, you got somewhere, so there's that, which is nice
+    `while not tcod.event == 'QUIT':`
+    - can't find old, so whatever 🤷‍
+- problem now is the x button doesn't work, when you try to close it.  'Esc' still works, but not the X button.  how vex.  I am vex.  vex vex vex 🐱‍👓

@@ -2,6 +2,8 @@ import libtcodpy as libtcod
 
 
 def handle_keys(key):
+    key_char = chr(key.c)
+
     # Movement keys
     if key.vk == libtcod.KEY_UP:
         return {'move': (0, -1)}
@@ -18,6 +20,11 @@ def handle_keys(key):
     elif key.vk == libtcod.KEY_ESCAPE:
         # Exit the game
         return {'exit': True}
+
+    if key_char == 'p':
+        return {'command': 'p'}
+    if key_char == 'o':
+        return {'command': 'o'}
 
     # No key was pressed
     return {}

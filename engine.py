@@ -1,4 +1,6 @@
-import libtcodpy as libtcod
+import tcod as libtcod
+import tcod.event
+import json
 
 from entity import Entity
 from fov_functions import initialize_fov, recompute_fov
@@ -45,12 +47,16 @@ def main():
 
     libtcod.console_set_custom_font('arial10x10.png', libtcod.FONT_TYPE_GREYSCALE | libtcod.FONT_LAYOUT_TCOD)
 
-    libtcod.console_init_root(screen_width, screen_height, 'libtcod tutorial revised', False)
+    libtcod.console_init_root(screen_width, screen_height,  'libtcod tutorial revised', False, vsync= True, renderer = libtcod.RENDERER_SDL2)
 
-    con = libtcod.console_new(screen_width, screen_height)
+    con = libtcod.console.Console(screen_width, screen_height)
 
     game_map = GameMap(map_width, map_height)
     game_map.make_map(max_rooms, room_min_size, room_max_size, map_width, map_height, player)
+    print("{}: {}".format("Rooms", len(game_map.rooms)))
+
+
+
 
     fov_recompute = True
 
@@ -59,6 +65,8 @@ def main():
     key = libtcod.Key()
     mouse = libtcod.Mouse()
 
+    # can't get this code to work the way it's supposed to, so whateves
+    # while not tcod.event.get() == 'QUIT':
     while not libtcod.console_is_window_closed():
         libtcod.sys_check_for_event(libtcod.EVENT_KEY_PRESS, key, mouse)
 
@@ -77,6 +85,36 @@ def main():
 
         move = action.get('move')
         exit = action.get('exit')
+        command = action.get('command')
+
+        if command == 'p':
+            print("{} {}".format("Rooms:", len(game_map.rooms)))
+            gm = game_map
+            gm_tiles = gm.tiles
+            xt = 0
+            yt = 0
+
+
+            for xdex, xtem in enumerate(gm.tiles):
+                for ydex, ytem in enumerate(xtem):
+                    print("{}{} {}{} {}".format("Tile (", xdex, ydex, "):", json.dumps(gm.tiles[xdex][ydex].__dict__)))
+
+                # print(index, item)
+
+            # for row in gm.tiles:
+
+            #     for abc in row:
+            #         print(abc)
+
+                # for c in row:
+                    # if c.explored == True:
+                        # print("{}{} {}{} {}".format("Tile (", xt, yt, "):", json.dumps(gm.tiles[xt][yt].__dict__)))
+
+            # print("{}{} {}{} {}".format("Tile (", xt, yt, "):", json.dumps(gm.tiles[xt][yt].__dict__)))
+
+        if command == 'o':
+            print("{}: {}".format("Rooms", len(game_map.rooms)))
+
         fullscreen = action.get('fullscreen')
 
         if move:
