@@ -49,3 +49,14 @@ print({} + {}, "rooms", len(game_map.rooms))
     `while not tcod.event == 'QUIT':`
     - can't find old, so whatever 🤷‍
 - problem now is the x button doesn't work, when you try to close it.  'Esc' still works, but not the X button.  how vex.  I am vex.  vex vex vex 🐱‍👓
+
+2019-11-16
+
+- what the fuck is going on?  I think i'm on part 6, but i'm not sure
+  ```
+    File ".\engine.py", line 190, in <module>
+    main()
+  File ".\engine.py", line 174, in main
+    for enemy_turn_result in enemy_turn_results:
+  TypeError: 'NoneType' object is not iterable
+    ```
