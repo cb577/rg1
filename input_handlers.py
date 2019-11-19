@@ -22,6 +22,10 @@ def handle_keys(key):
     elif key_char == 'n':
         return {'move': (1, 1)}
 
+    if key_char == 'g':
+        print('you pressed g')
+        return {'pickup': True}
+
     if key.vk == libtcod.KEY_ENTER and key.lalt:
         # Alt+Enter: toggle full screen
         return {'fullscreen': True}
@@ -29,10 +33,10 @@ def handle_keys(key):
         # Exit the game
         return {'exit': True}
 
-    if key_char == 'p':
-        return {'command': 'p'}
-    if key_char == 'o':
-        return {'command': 'o'}
+    # if key_char == 'p':
+    #     return {'command': 'p'}
+    # if key_char == 'o':
+    #     return {'command': 'o'}
 
     # No key was pressed
     return {}
