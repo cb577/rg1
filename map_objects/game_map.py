@@ -158,7 +158,6 @@ class GameMap:
         y = int(y1)
 
         while (x != x2 and y != y2):
-            # print(x,y)
             rx = randint(0, abs_dx)
             ry = randint(0, abs_dy)
 
